@@ -193,4 +193,25 @@ Math.min(1,0,-1)
 - 在320px的屏幕上只占设计稿的一半的font-size = 50px = 1rem 一个基准
 - 换个说法，当前屏幕的大小占640设计稿的多少比重 再乘它的预设基准 就可以得出当前基准是多少px = 1rem; 
 
-# Math 
+# Math typeof Math => object
+**`abs`**: 取绝对值
+
+**`ceil`**: 向上取整
+
+**`floor`**: 向下取整
+
+**`round`**: 四舍五入
+
+**`sqrt`**: 开平方
+
+**`pow`**: 幂 
+
+**`max/min`**: 获取最大值和最小值
+
+**`random`**: 获取0~1的随机小数
+
+## 获取n~m之间的随机整数 公式：Math.round(Math.random()*(m-n)+n);
+- 过程分析：Math.random()生成[0,1)的数
+- Math.random()*5生成[0,5)的数。
+- 例如2~10 [0,1)* 8 是[0,8) 再加上n [2,10)
+- 通过Math.round()四舍五入 
