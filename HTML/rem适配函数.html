@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  .constent {
+    width: 2rem;
+    height: 2rem;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
+
+<body>
+  <div class="constent">
+    AAA
+  </div>
+</body>
+
+</html>
+<script>
+  // onresize 事件会在窗口或框架被调整大小时发生。
+  window.onresize = () => {
+    var w = document.documentElement.clientWidth,  //获取浏览器窗口文档显示区域的宽度，不包括滚动条。
+      fz = w / 1080 * 100;
+    document.getElementsByTagName('html')[0].style.fontSize = fz + 'px';
+  }
+  // ; (function anonymous() {
+  //   function computed() {
+  //     var HTML = document.documentElement;
+  //     var winW = HTML.clientWidth;
+  //     var desW = 1080;
+  //     if (winW >= desW) {
+  //       HTML.style.fontSize = '100px';
+  //       return;
+  //     }
+  //     HTML.style.fontSize = winW / 1080 * 100 + 'px';
+  //   }
+  //   computed();
+  //   window.addEventListener('resize', computed, false)
+  // })();
+</script>

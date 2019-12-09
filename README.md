@@ -173,3 +173,24 @@ function deepClone(obj,deep) {
 
 
 
+# Javascript中Math.max.apply和Math.max的区别
+- Javascript中的Math.max方法可以求出给定参数中最大的数。
+```JavaScript
+Math.max('1','2','3.1','3.2')
+3.2
+Math.min(1,0,-1)
+-1 
+```
+
+# href和src的区别是什么
+- src 的内容，是页面必不可少的一部分，是引入。href 的内容，是与该页面有关联，是引用。区别就是，引入和引用。
+
+# rem 
+- 当前设备宽/当前rem = 设计稿宽/预设rem
+- 换算公式 当前rem基准值 = 当前设备宽度 /设计稿宽度 * 预设的基准值 
+- 基准值可以理解成font-size
+- 也就是说640px的设计稿 预设font-size = 100px = 1rem; 为1个基准
+- 在320px的屏幕上只占设计稿的一半的font-size = 50px = 1rem 一个基准
+- 换个说法，当前屏幕的大小占640设计稿的多少比重 再乘它的预设基准 就可以得出当前基准是多少px = 1rem; 
+
+# Math 
