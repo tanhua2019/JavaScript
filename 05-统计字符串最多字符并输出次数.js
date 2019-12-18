@@ -24,6 +24,11 @@ function more(str) {
 
 more(str)
 
+// var obj = {}
+// for (let key of str) {
+//   obj[key] ? obj[key] ++ : obj[key] = 1;
+// }
+// console.log(obj);
 
 
 // var str = "sdfasdfjhsp;ldjf;lasnkaaaaivuhjapso;ijv;zlkxjvopiwhejvn"
