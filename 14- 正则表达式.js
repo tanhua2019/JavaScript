@@ -8,6 +8,6 @@
 
 // i的作用是忽略大小写
 
-var str = "The rain in Spain falls mainly in the plain"
+var str = "The rain in SpAin falls mainly in the plain"
 
 console.log(str.match(/ain/ig));

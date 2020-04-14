@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  let obj = {
+    name: '张三',
+    age: 23,
+    sex: '男',
+    price: 99
+  }
+  Object.prototype.A = function () {
+    console.log(this,arguments);
+  }
+  obj.A();
+  console.dir(obj, '2');
+  function Person() { }
+  console.dir(Person);
+  console.dir(Person.prototype.constructor);
+  let a = { name: "张三" }
+  let b = { age: 20 }
+  Object.setPrototypeOf(a, b)
+  console.dir(a.__proto__ == b);
+  // console.log(a instanceof b);
+</script>
