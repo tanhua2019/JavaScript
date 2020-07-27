@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <input type="text" id="input">
+    <span id="title"></span></div>
+  </div>
+</body>
+</html>
+<script>
+  const obj = {}
+  var input = document.getElementById("input")
+  var title = document.getElementById("title")
+  const newObj = new Proxy(obj,{
+    get: (target,key) => {
+      console.log(target,key,'2222');
+      return Reflect.get(target,key)
+    },
+    set: (target,key,value) => {
+      if (key == 'text') {
+        input.value = value;
+        title.innerText = value;
+      }
+      console.log(target,key,value,'3333');
+      return Reflect.set(target,key,value)
+    }
+  })
+  newObj.age
+  input.addEventListener("input", function (e) {
+    newObj.text = e.target.value;
+  })
+</script>

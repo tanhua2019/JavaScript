@@ -27,11 +27,12 @@
 </html>
 <script>
   // onresize 事件会在窗口或框架被调整大小时发生。
-  window.onresize = () => {
+  window.onresize = (() => {
+    console.log(11);
     var w = document.documentElement.clientWidth,  //获取浏览器窗口文档显示区域的宽度，不包括滚动条。
       fz = w / 1080 * 100;
     document.getElementsByTagName('html')[0].style.fontSize = fz + 'px';
-  }
+  })
   // ; (function anonymous() {
   //   function computed() {
   //     var HTML = document.documentElement;
