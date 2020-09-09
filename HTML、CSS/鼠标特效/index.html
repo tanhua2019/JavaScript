@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+     document.addEventListener('mousemove', e=> {
+       let body = document.querySelector('body');
+       let trans = document.createElement('span');
+       let x = e.offsetX;
+       let y = e.offsetY;
+       
+       trans.style.left = x + 'px';
+       trans.style.top = y + 'px';
+       let size = Math.random() * 100;
+       trans.style.width = size + 'px'
+       trans.style.height = size + 'px'
+       body.appendChild(trans)
+       setTimeout(() => {
+         trans.remove()
+       }, 2000);
+     })
+  </script>
+</body>
+</html>

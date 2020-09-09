@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #biao {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid red;
+    }
+    #ie {
+      width: 100px;
+      height: 100px;
+      padding: 10px;
+      border: 10px solid blue;
+      box-sizing: padding-box;
+    }
+    #sanjiao {
+      width: 0;
+      height: 0;
+      border: 100px solid transparent;
+      border-bottom: 100px solid blue;
+
+ 
+    }
+  </style>
+</head>
+<body>
+  <div id='biao'></div>
+  <div id='ie'></div>
+  <div id='sanjiao'></div>
+</body>
+</html>
+<script>
+  //  盒子有margin padding border content四个属性 分为标准盒子模型和ie盒子模型
+  //  二者之间的区别： 标准盒子模型宽度是content宽度, ie盒子模型宽度是content+2padding+2border，可通过box-sizing:border-box属性将标准盒子模型转换成ie盒子模型
+</script>

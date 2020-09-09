@@ -4,10 +4,10 @@ var str = "dsfgdfshfghdfasdfasdfasdddddddddfehgsdfgasdfaf";
 function more(str) {
   var newObj = {}
   for (let i = 0; i < str.length; i++) {
-    if (newObj[str.charAt(i)]) {
-      newObj[str.charAt(i)] ++;
+    if (newObj[str[i]]) {
+      newObj[str[i]] ++;
     } else {
-      newObj[str.charAt(i)] =1;
+      newObj[str[i]] =1;
     }
   }
 
