@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <ul id="ul">
+      <li data-id="myId">1</li>
+      <li data-li="2">2</li>
+      <li data-li="3">3</li>
+      <li data-li="4">4</li>
+      <li data-li="5">5</li>
+      <li data-li="6">6</li>
+      <li data-li="7">7</li>
+      <li data-li="8">8</li>
+      <li data-li="9">9</li>
+      <li data-li="10">10</li>
+    </ul>
+  </div>
+</body>
+
+</html>
+<script>
+  let ul = document.getElementById('ul')
+  ul.addEventListener('mouseover', e => {
+    if (e.target.tagName == "LI") {//如果点击的目标的标签名为LI
+      e.target.style.background = "red"
+    }
+  })
+  ul.addEventListener('mouseout', e => {
+    if (e.target.tagName == "LI") {//如果点击的目标的标签名为LI
+      e.target.style.background = ""
+    }
+  })
+
+</script>

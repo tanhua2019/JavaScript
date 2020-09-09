@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #box {
+      width: 80px;
+      height: 80px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #box1 {
+      width: 80px;
+      height: 40px;
+      background-color: blue;
+      border-radius: 40px 40px 0 0;
+      animation: animate1 .5s infinite;
+    }
+
+    #box2 {
+      width: 80px;
+      height: 40px;
+      background-color: blue;
+      border-radius: 0 0 40px 40px;
+      animation: animate2 .5s infinite;
+    }
+
+    #box3 {
+      width: 150px;
+      height: 20px;
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @keyframes animate1 {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: center bottom;
+      }
+
+      50% {
+        transform: rotate(-40deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes animate2 {
+      0% {
+        transform: rotate(0deg);
+        transform-origin: center top;
+      }
+
+      50% {
+        transform: rotate(40deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    #box4 {
+      width: 20px;
+      height: 20px;
+      background-color: blue;
+      border-radius: 50%;
+      position: absolute;
+      right: 0;
+      animation: animate 2s linear infinite;
+    }
+    @keyframes animate {
+      0% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateX(-700%);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+  </div>
+</body>
+
+</html>
+<script>
+  setInterval(() => {
+    let a = document.createElement('div')
+    a.id = "box4";
+    document.getElementById('box3').append(a);
+    setTimeout(() => {
+      a.remove()
+    }, 4000);
+  }, 500);
+</script>

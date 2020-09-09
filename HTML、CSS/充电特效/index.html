@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    ＊ {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 400px;
+      height: 600px;
+      border: 10px solid rgba(0, 0, 0, .9);
+      margin: 20px auto;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .contrast {
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      position: absolute;
+      filter: contrast(12);
+      animation: hueRota 5s linear infinite;
+    }
+
+    .cricle {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      margin-left: -100px;
+      filter: blur(4px);
+      animation: circleRota 4s linear infinite;
+    }
+
+    @keyframes hueRota {
+      0% {
+        filter: contrast(12) hue-rotate(0);
+      }
+
+      100% {
+        filter: contrast(12) hue-rotate(365deg);
+      }
+    }
+
+    @keyframes circleRota {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(365deg);
+      }
+    }
+
+    .cricle::before {
+      content: "";
+      width: 120px;
+      height: 120px;
+      background: limegreen;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 42% 38% 62% 49% / 45%;
+    }
+
+    .cricle::after {
+      content: "";
+      width: 105px;
+      height: 105px;
+      background: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+    }
+
+    .number {
+      position: absolute;
+      left: 50%;
+      top: 120px;
+      transform: translate(-50%, -50%);
+      z-index: 100000;
+      font-size: 20px;
+      font-weight: 700;
+    }
+    .bottm {
+      width: 120px;
+      height: 30px;
+      background: limegreen;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      margin-left: -60px;
+      border-radius: 150px 150px 0 0 ;
+      filter: blur(8px);
+    }
+    .bubble {
+      left: 50%;
+      background: limegreen;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 0;
+      transform: translate(-50%, 0);
+      z-index: 1000;
+      animation: bubbleMove ease-in-out infinite;
+      filter: blur(5px);
+    }
+    @keyframes bubbleMove {
+      0% {
+        bottom: 0;
+      }
+      100% {
+        bottom: calc(100% - 190px)
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <div class="number" id="bb"></div>
+    <div class="contrast" id="aa">
+      <span class="bubble"></span>
+      <div class="bottm"></div>
+      <div class="cricle"></div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script>
+  setInterval(() => {
+    let a = document.createElement('span');
+    a.className='bubble';
+    let random = Math.floor(Math.random()* 10 + 20);
+    let random2 = Math.floor(Math.random()* 14 + 43);
+    a.style.width = random + 'px'
+    a.style.height = random + 'px'
+    a.style.animationDuration = 5 + 's'
+    a.style.animationDelay = 1 + 's'
+    a.style.left = random2 + '%'
+    let b = document.getElementById('aa');
+    b.appendChild(a)
+    setTimeout(() => {
+      a.remove()
+    }, 10000);
+  }, 900);
+  var a = 23;
+  setInterval(() => {
+    a = Number(a) + Math.round(Math.random()* 10 + 20)/10
+    a = a.toFixed(1);
+    document.getElementById("bb").innerText = a +'%';
+  }, 1000);
+</script>

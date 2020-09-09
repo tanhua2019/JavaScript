@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script>
+  window.addEventListener('click',e => {
+    console.log('window click')
+  },false)
+  document.addEventListener('click',e => {
+    e.stopPropagation()
+    console.log('document click');
+  },false)
+  // window > document > html > body 包含关系
+  //第三个参数默认为false， 冒泡阶段执行，从内到外，输出结果 document window 
+  //第三个参数为true时候， 捕获阶段执行，从外到内， 输出结果 window document
+
+  // e.stopPropagation(); 测试
+</script>
